@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get 'my_portfolio' => 'users#my_portfolio'
-
+  get 'search_stocks' => 'stocks#search'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
