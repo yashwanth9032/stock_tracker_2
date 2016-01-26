@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers => {:registrations => 'user/registrations'}
   resources :user_stocks, except: [:show, :edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+
+  # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'my_portfolio' => 'users#my_portfolio'
   get 'search_stocks' => 'stocks#search'
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'my_friends' => 'users#my_friends'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
