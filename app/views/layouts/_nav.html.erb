@@ -1,28 +1,34 @@
-<div class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <%= link_to 'Finance Tracker', root_path, class: "navbar-brand" %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Finance Tracker', root_path, class: "navbar-brand" %>
+    </div>
     <% if current_user %>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav col-md-6">
         <li><%= link_to "My Portfolio", my_portfolio_path %></li>
-        <li><%= link_to "My Profile", edit_registration_path(current_user) %></li>
+        <li><%= link_to "My Profile", user_path(current_user) %></li>
         <li><%= link_to "My Friends", my_friends_path %></li>
       </ul>
-      <ul class "nav navbar-nav navbar-right">
-        <li class="user-name text-right">
+
+      <ul class="nav navbar-nav navbar-right col-md-4">
+        <li class="col-md-8 user-name text-right">
           <i class="fa fa-user"></i>
           <%= current_user.full_name.present? ? current_user.full_name : current_user.email %>
         </li>
-        <li class="logout">
+        <li class="col-md-4 logout">
           <%= link_to("logout", destroy_user_session_path, class: "btn btn-xs btn-danger", method: :delete) %>
         </li>
       </ul>
-    </div>
-    <% end %>
-  </div>
-</div>
+      <% end %>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
