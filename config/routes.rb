@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'my_portfolio' => 'users#my_portfolio'
   get 'search_stocks' => 'stocks#search'
   get 'my_friends' => 'users#my_friends'
+  get 'search_friends' => "users#search"
+  post 'add_friend' => "users#add_friend"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
