@@ -38,7 +38,8 @@ class Stock < ActiveRecord::Base
     
     api_url = 'https://www.alphavantage.co/query'
     query = {
-      function: 'TIME_SERIES_DAILY',
+      function: 'TIME_SERIES_INTRADAY',
+      interval: '1min',
       symbol: ticker_symbol,
       apikey: ENV['ALPHA_ADVANTAGE_API_KEY']
     }.to_query
@@ -53,7 +54,7 @@ class Stock < ActiveRecord::Base
       data = JSON.parse(response)
       
       # Get the actual historical data
-      historical_data = data['Time Series (Daily)']
+      historical_data = data['Time Series (1min)']
       
       # Get the most recent data
       recent_data = historical_data.first
