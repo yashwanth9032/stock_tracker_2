@@ -50,6 +50,7 @@ class StockQuote
       # Get the most recent data
       recent_data = historical_data.first
       return nil unless recent_data # Stop early if no recent data
+      puts recent_data[0]
       
       # The actual data hash is in the second item.
       recent_data = recent_data[1]
@@ -74,5 +75,4 @@ class StockQuote
 end
 
 stock_price = StockQuote.price_by_symbol('AAPL')
-puts stock_price
 stock_written = StockQuote.write_price_by_symbol('AAPL', stock_price)
