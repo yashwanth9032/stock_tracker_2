@@ -1,8 +1,0 @@
-Finance tracker made for Complete Ruby on Rails Developer course.
-https://www.udemy.com/the-complete-ruby-on-rails-developer-course
-
-Adjusted to use Alpha Vantage API instead of discontinued Yahoo! Finance API.
-
-Also contains related adjusted code for the Projects in Programming Languages course.
-Which also originally used Yahoo! Finance API.
-https://www.udemy.com/ruby-python-java

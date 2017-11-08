@@ -41,7 +41,7 @@ class Stock < ActiveRecord::Base
       function: 'TIME_SERIES_INTRADAY',
       interval: '1min',
       symbol: ticker_symbol,
-      apikey: ENV['ALPHA_ADVANTAGE_API_KEY']
+      apikey: 'W441HJ2X6D2FDD9I'
     }.to_query
     
     # Combine the API URL and the query to get the full URL
